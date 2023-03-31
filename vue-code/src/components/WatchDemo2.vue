@@ -1,3 +1,12 @@
+<template>
+    <p>name: {{nameRef}}</p>
+    <p>city: {{state.info.city}}</p>
+    <div>
+        <button @click="changeName">change name</button>
+        <button @click="changeCity">change city</button>
+    </div>
+</template>
+
 <script setup>
 // 升级 Vue3.2
 // Composition API
@@ -36,12 +45,3 @@ function changeCity() {
 }
 
 </script>
-
-<template>
-    <p>name: {{nameRef}}</p>
-    <p>city: {{state.info.city}}</p>
-    <div>
-        <button @click="changeName">change name</button>
-        <button @click="changeCity">change city</button>
-    </div>
-</template>
