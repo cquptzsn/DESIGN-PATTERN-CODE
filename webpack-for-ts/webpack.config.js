@@ -2,12 +2,14 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const srcPath = path.join(__dirname, 'src')
+// const srcPath = path.join(__dirname, 'src')
+const srcPath = path.resolve(__dirname, 'src/Factory') // 这里要根据不同的文件，改成绝对路径
 const tplPath = path.join(__dirname, 'tpl')
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(srcPath, 'index'),
+    // entry: path.resolve(srcPath, 'index'),
+    entry: path.resolve(srcPath, 'jquery.ts'), // 这里也要根据不同的文件进行更改
     module: {
         rules: [
             {

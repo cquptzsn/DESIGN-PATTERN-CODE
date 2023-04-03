@@ -78,29 +78,29 @@ zhoushengnan.teach()
 
 // ------------------------------------------------------
 
-interface IStyleInfo {
-  [key: string]: string
-}
+// interface IStyleInfo {
+//   [key: string]: string
+// }
 
-class JQuery {
-  css(key: string, value: string): void
-  css(styleInfo: IStyleInfo): void 
-  css(key: IStyleInfo | string, value?: string)
-  {
-    if (typeof key === 'string') {
+// class JQuery {
+//   css(key: string, value: string): void
+//   css(styleInfo: IStyleInfo): void 
+//   css(key: IStyleInfo | string, value?: string)
+//   {
+//     if (typeof key === 'string') {
 
-    } else {
+//     } else {
 
-    }
-  }
-}
+//     }
+//   }
+// }
 
-const j = new JQuery()
-j.css('font-size', '16px')
-j.css({
-  'font-size': '16px', 
-  'color': 'red'
-})
+// const j = new JQuery()
+// j.css('font-size', '16px')
+// j.css({
+//   'font-size': '16px', 
+//   'color': 'red'
+// })
 
 
 class Employee {
