@@ -101,3 +101,47 @@ j.css({
   'font-size': '16px', 
   'color': 'red'
 })
+
+
+class Employee {
+  name: string
+  timeCard: TimeCard
+  constructor(name: string, timeCard: TimeCard) {
+    this.name = name
+    this.timeCard = timeCard
+  }
+}
+
+class TimeCard {
+
+}
+
+// ------------------------------------------------------
+
+function loadImage(src: string) {
+  const promise = new Promise<HTMLImageElement>((resolve, reject) => {
+    const img = document.createElement('img')
+    img.onload = () => {
+      resolve(img)
+    }
+    img.onerror = () => {
+      reject('图片加载失败')
+    }
+    img.src = src
+  })
+  return promise
+}
+
+const src = 'xxx.png'
+const res = loadImage(src)
+res
+  .then((img: HTMLImageElement) => { // 每个 then 里面只做一件事情
+    console.log(img.width)
+    return img
+  })
+  .then((img: HTMLImageElement) => {
+    console.log(img.height)
+  })
+  .catch(err => {
+    console.error(err)
+  })
