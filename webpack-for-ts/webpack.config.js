@@ -3,13 +3,13 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // const srcPath = path.join(__dirname, 'src')
-const srcPath = path.resolve(__dirname, 'src/SingletonPattern') // 这里要根据不同的文件，改成绝对路径
+const srcPath = path.resolve(__dirname, 'src/Observer') // 这里要根据不同的文件，改成绝对路径
 const tplPath = path.join(__dirname, 'tpl')
 
 module.exports = {
     mode: 'development',
     // entry: path.resolve(srcPath, 'index'),
-    entry: path.resolve(srcPath, 'index2.ts'), // 这里也要根据不同的文件进行更改
+    entry: path.resolve(srcPath, 'index.ts'), // 这里也要根据不同的文件进行更改
     module: {
         rules: [
             {
