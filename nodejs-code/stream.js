@@ -1,19 +1,20 @@
 /**
  * @description stream demo
- * @author 双越老师
+ * @author 周圣楠
  */
 
 const fs = require('fs')
 const readStream = fs.createReadStream('./data/yarn.lock.txt')
 
-// 读取文件字符的 length
+// 文件字符的长度
 let length = 0
 
-readStream.on('data', function (chunk) {
+readStream.on('data', (chunk) => {
     const curLength = chunk.toString().length
-    console.log('current length', curLength)
+    console.log('curLength => ', curLength)
     length += curLength
 })
-readStream.on('end', function () {
-    console.log(length)
+
+readStream.on('end', () => {
+    console.log('读取完毕，文件长度为 => ', length)
 })
