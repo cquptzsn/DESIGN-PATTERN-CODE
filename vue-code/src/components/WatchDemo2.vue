@@ -1,47 +1,54 @@
 <template>
-    <p>name: {{nameRef}}</p>
-    <p>city: {{state.info.city}}</p>
     <div>
+        <p>name: {{nameRef}}</p>
         <button @click="changeName">change name</button>
-        <button @click="changeCity">change city</button>
+        <p>city: {{state.info.city}}</p>
+        <button @click="changeCity">change name</button>
     </div>
 </template>
 
 <script setup>
 // 升级 Vue3.2
 // Composition API
+import { 
+    ref, 
+    watch,
+    watchEffect,
+    reactive
+} from 'vue'
 
-import { ref, watchEffect, watch, reactive } from 'vue'
-
-const nameRef = ref('双越')
-// watch(
-//     [nameRef], // ref 数组形式
-//     (newValues, values) => {
-//         console.log('name', newValues, values)
-//     }
-// )
-// 初始化即刻触发
-watchEffect(() => {
-    console.log('name', nameRef.value)
-})
-function changeName() {
-    nameRef.value = `双越 ${Date.now()}`
-}
-
+const nameRef = ref('周圣楠')
 const state = reactive({
     info: {
         city: '北京'
     }
 })
-watch(
-    () => state, // reactive 函数形式
-    () => {
-        console.log('city', state.info.city)
-    },
-    { deep: true } // 深度监听
-)
+
+function changeName() {
+    nameRef.value = `周圣楠-${Date.now()}`
+}
+
 function changeCity() {
     state.info.city = '上海'
 }
 
+// watch(
+//     [nameRef], // ref采用数组形式
+//     (newVal, val) => {
+//         console.log(`新名字: ${newVal}  旧名字: ${val}`)
+//     }
+// )
+
+watch(
+    () => state, // reactive 采用函数形式监听
+    () => {
+        console.log(`city: ${state.info.city}`)
+    },
+    {deep: true} // 引用类型的值，深度监听
+)
+
+// 监听-即刻触发
+watchEffect(() => {
+    console.log(`名字：${nameRef.value}`)
+})
 </script>

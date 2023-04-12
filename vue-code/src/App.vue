@@ -1,22 +1,23 @@
 <template>
-  <p>vue demo</p>
-  <!-- <hr> -->
-  <!-- <WatchDemo1></WatchDemo1> -->
-  <hr>
-  <WatchDemo2></WatchDemo2>
+  <div>
+    <p>vue demo</p>
+    <!-- <watch-demo1></watch-demo1> -->
+    <hr />
+    <WatchDemo2></WatchDemo2>
+  </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-// import WatchDemo1 from './components/WatchDemo1' // Option API
-import WatchDemo2 from './components/WatchDemo2' // Composition API
+ // Option API
+// import WatchDemo1 from './components/WatchDemo1.vue';
+// Composition API
+import WatchDemo2 from './components/WatchDemo2.vue';
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
     // WatchDemo1,
-    WatchDemo2,
+    WatchDemo2
   }
 }
 </script>
