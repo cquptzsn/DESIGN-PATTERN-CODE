@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // const srcPath = path.join(__dirname, 'src')
-const srcPath = path.resolve(__dirname, 'src/Observer') // 这里要根据不同的文件，改成绝对路径
+const srcPath = path.resolve(__dirname, 'src/PublishSubscribe') // 这里要根据不同的文件，改成绝对路径
 const tplPath = path.join(__dirname, 'tpl')
 
 module.exports = {
