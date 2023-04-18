@@ -13,12 +13,14 @@
     </p>
 
     <script>
+        // 子页面往父页面发送消息
         document.getElementById('btn1').addEventListener('click', () => {
-            window.parent.postMessage('world', '*')
+            window.parent.postMessage('world', '*') // * 表示不限域名
         })
 
+        // 子页面接收从其他页面传递过过来的消息
         window.addEventListener('message', event => {
-            console.log('child received', event.data)
+            console.log('child received message => ', event.data)
         })
     </script>
 </body>

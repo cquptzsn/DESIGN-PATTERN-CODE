@@ -16,11 +16,11 @@
 
     <script>
         document.getElementById('btn1').addEventListener('click', () => {
-            window.iframe1.contentWindow.postMessage('hello', '*')
+            window.iframe1.contentWindow.postMessage('hello', '*') // 向iframe1中发送消息
         })
 
         window.addEventListener('message', event => {
-            console.log('main received', event.data)
+            console.log("main received => ", event.data)
         })
     </script>
 </body>
