@@ -9,7 +9,7 @@ const tplPath = path.join(__dirname, 'tpl')
 module.exports = {
     mode: 'development',
     // entry: path.resolve(srcPath, 'index'),
-    entry: path.resolve(srcPath, 'generator.ts'), // 这里也要根据不同的文件进行更改
+    entry: path.resolve(srcPath, 'generatorDOM.ts'), // 这里也要根据不同的文件进行更改
     module: {
         rules: [
             {
