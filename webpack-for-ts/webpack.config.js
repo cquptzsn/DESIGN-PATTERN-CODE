@@ -8,7 +8,7 @@ const tplPath = path.join(__dirname, 'tpl')
 
 module.exports = {
     mode: 'development',
-    entry: path.resolve(srcPath, 'webpackDevserverProxy'),
+    entry: path.resolve(srcPath, 'proxy-agent'),
     // entry: path.resolve(srcPath, 'classMethod.ts'), // 这里也要根据不同的文件进行更改
     module: {
         rules: [
@@ -34,10 +34,10 @@ module.exports = {
             filename: 'index.html'
         })
     ],
-    devServer: {
-        port: 3000,
-        proxy: {
-            '/api': 'http://localhost:8081'
-        }
-    },
+    // devServer: {
+    //     port: 3000,
+    //     proxy: {
+    //         '/api': 'http://localhost:8081'
+    //     }
+    // },
 }
